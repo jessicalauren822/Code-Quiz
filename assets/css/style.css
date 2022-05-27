@@ -61,5 +61,11 @@ h1 {
     width: 200px;
     margin: 10px;
     border-radius: 10px
-    
+}
+
+.btn:hover {
+    cursor:pointer;
+    background-color: magenta;
+    transition: transform 150ms;
+    transform: scale
 }
