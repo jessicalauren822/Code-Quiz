@@ -11,6 +11,71 @@ var penalty = 10;
 var holdInterval = 0;
 var newEl = document.createElement("ul");
 
+var questions = [
+    {
+        question: "What is 2 + 2?",
+        choices: ["A. 2", "B. 4", "C. 21", "D. 17"],
+        answer: "B. 4"
+    },
+    {
+        question: "What is 3 + 3?",
+        choices: ["A. 6", "B. 3", "C. 9", "D. 12"],
+        answer: "A. 6"
+    },
+    {
+        question: "What is 4 + 4?",
+        choices: ["A. 10", "B. 12", "C. 9", "D. 8"],
+        answer: "D. 8"
+    },
+    {
+        question: "What is 5 + 5?",
+        choices: ["A. 11", "B. 13", "C. 10", "D. 12"],
+        answer: "C. 10"
+    }
+]
+
+function render(questionOptions) {
+    //loop through questions array
+    for(var i=0; i < questions.length, i++) {
+        var userQuestion = questions[questionCounter].question;
+        var userChoices = questions[questionCounter].choices;
+        home.textContent = userQuestion;
+    }
+
+    userChoices.forEach(function (newItem) {
+        var listItem = document.createElement("li");
+        listItem.textContent = newItem;
+        home.appendChild(newEl);
+        newEl.appendChild(listItem);
+        listItem.addEventListener("cick", (compare));
+    })
+}
+
+//compare choices with answer
+function compare(event) {
+    var element = event.target;
+
+    if (element.matches(li)) {
+        var createDiv = document.createElement("div");
+        createDiv.setAttribute("id", "createDiv");
+       
+        //Correct
+        if (element.textContent == questions[questionCounter].answer) {
+            score++;
+            createDiv.textContent = "Correct!";
+        } 
+        //Incorrect
+        else {
+            timeLeft = timeLeft - penalty;
+            createDiv.textContent = "Wrong!"
+        }
+    }
+
+    //What quesiton user is one
+}
+
+
+
 
 // var question = document.querySelector("#question");
 // var choices = Array.from(document.querySelectorAll(".choice-text"));
