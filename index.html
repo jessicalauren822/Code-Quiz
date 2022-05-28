@@ -9,14 +9,21 @@
 </head>
 
 <body>
+    <!-- Highscores -->
     <div class="highscore">
-        <a href="highscores.html" id="highscore-btn" class="highscore" text-align:left>View High Scores</a>
-    </div>
-   
+        <a href="highscores.html" id="highscore-btn" text-align:left>View High Scores</a>
+    </div>    
+
     <div class="container">
+         <!-- Timer -->
+         <div id="timer"></div>
+    
+         <!-- Quiz content -->
         <div id="home" class="flex-column flex-center">
             <h1>Coding Quiz Challenge</h1>
-            <a href="game.html" class="btn">Start Quiz</a>
+            <p>Try to answer the following questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <ul id="choices"></ul>
+            <button href="game.html" id="start" class="btn">Start Quiz</button>
         </div>
     </div>
 
