@@ -36,7 +36,7 @@ var questions = [
 
 function render(questionOptions) {
     //loop through questions array
-    for(var i=0; i < questions.length, i++) {
+    for(var i=0; i < questions.length; i++) {
         var userQuestion = questions[questionCounter].question;
         var userChoices = questions[questionCounter].choices;
         home.textContent = userQuestion;
@@ -72,6 +72,25 @@ function compare(event) {
     }
 
     //What quesiton user is one
+    questionCounter++;
+
+    if (questionCounter >= questions.length) {
+        done();
+        createDiv.textContent = "All done"
+    }
+    else {
+        render(questionCounter);
+    }
+    home.appendChild(createDiv);
+}
+
+
+function done() {
+    home.innerHTML = "";
+    timer.innerHTML = "";
+
+    var newH1 = document.createElement("h1");
+
 }
 
 
