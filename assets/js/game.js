@@ -34,6 +34,22 @@ var questions = [
     }
 ]
 
+start.addEventListener("click", function() {
+    if(holdInterval === 0) {
+        holdInterval = setInterval(function() {
+            timeLeft--;
+            timer.textContent = "Time: " + timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(holdInterval);
+                done();
+                timer.textContent = "Time's Up!";
+            }
+        }, 1000);
+    }
+    render(questionCounter);
+})
+
 function render(questionOptions) {
     //loop through questions array
     for(var i=0; i < questions.length; i++) {
