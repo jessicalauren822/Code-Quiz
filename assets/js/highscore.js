@@ -1,6 +1,6 @@
 var highScore = document.querySelector("#highScore");
-var clearBtn = document.querySelector("#clea");
-var goBack = document.querySelector("goBack");
+var clearBtn = document.querySelector("#clearBtn");
+var backBtn = document.querySelector("backBtn");
 
 clearBtn.addEventListener("click", function () {
     localStorage.clearBtn();
@@ -18,6 +18,6 @@ if (allScores !=null) {
     }
 }
 
-goBack.addEventListener("click", function() {
+backBtn.addEventListener("click", function() {
     window.location.replace("./index.html");
 })
