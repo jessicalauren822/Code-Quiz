@@ -90,6 +90,23 @@ function done() {
     timer.innerHTML = "";
 
     var newH1 = document.createElement("h1");
+    newH1.setAttribute("id", "newH1");
+    newH1.textContent = "All Done!"
+    questionsDiv.appendChild(newH1);
+
+    var newP = document.createElement("p");
+    newP.setAttribute("id", "newP");
+    questionsDiv.appendChild(newP);
+
+    //Time remaining and score
+    if (timeLeft >= 0){
+        var remainingTime = timeLeft;
+        var newP2 = document.createElement("p");
+        clearInterval(holdInterval);
+        newP2.textContent = "Your final score is: " + remainingTime;
+        questionsDiv.appendChild(newP2);
+
+    }
 
 }
 
