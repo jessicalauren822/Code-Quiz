@@ -12,6 +12,7 @@
 }
 
 #timer {
+    display: block;
     float: right;
 }
 
@@ -20,13 +21,24 @@ h1 {
     text-align:center;
 }
 
+li {
+    text-align: center;
+    background-color: indigo;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 20px;
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
 .container {
-    width: 100vw;
-    height: 100vh;
+    width: 500px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 80rem;
     margin: 0 auto;
 }
 
@@ -68,4 +80,9 @@ h1 {
     cursor:pointer;
     background-color: magenta;
     transition: transform 150ms;
+}
+
+#newDiv {
+    margin-top: 20px;
+    border-top: 2px solid lightgray;
 }

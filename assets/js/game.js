@@ -121,8 +121,52 @@ function done() {
         clearInterval(holdInterval);
         newP2.textContent = "Your final score is: " + remainingTime;
         questionsDiv.appendChild(newP2);
-
     }
+
+    var newLabel = document.createElement("label");
+    newLabel.setAttribute("id", "newLabel");
+    newLabel.textContent = "Enter initials: ";
+    questionsDiv.appendChild(newLabel);
+
+    var newInput = document.createElement("input");
+    newInput.setAttribute("type", "text");
+    newInput.setAttribute("id", "initials");
+    newInput.textContent = "";
+    questionsDiv.appendChild(newInput);
+
+    var newSubmit = document.createElement("button");
+    newSubmit.setAttribute("type", "submit");
+    newSubmit.setAttribute("class", "btn");
+    newSubmit.textContent = "Submit";
+    questionsDiv.appendChild(newSubmit);
+
+    newSubmit.addEventListener("click", function() {
+        var initials = newInput.value;
+
+        if (initials === null) {
+            console.log("No initials provided");
+        }
+        else {
+            var finalScore = {
+                initials: initials,
+                score: remainingTime
+            }
+            console.log(finalScore);
+            var allScores = localStorage.getItem("allScores:")
+            if(allScores === null) {
+                allScores = [];
+            }
+            else {
+                allScores = JSON.parse(allScores);
+            }
+
+        allScores.push(finalScore);
+        var newScore = JSON.stringify(allScores);
+        localStorage.setItem("allScores", newScore);
+       
+        window.location.replace("./highscore.html");
+        }
+    })
 
 }
 
