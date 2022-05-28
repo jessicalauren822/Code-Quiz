@@ -16,9 +16,12 @@
     float: right;
 }
 
+
+
 h1 {
     color: black;
     text-align:center;
+    font-size: 75px;
 }
 
 li {
@@ -40,6 +43,11 @@ li {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+}
+
+#home {
+    margin: 20px;
+    font-size: 25px;
 }
 
 .flex-column {

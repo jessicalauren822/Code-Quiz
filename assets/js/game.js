@@ -108,11 +108,11 @@ function done() {
     var newH1 = document.createElement("h1");
     newH1.setAttribute("id", "newH1");
     newH1.textContent = "All Done!"
-    questionsDiv.appendChild(newH1);
+    home.appendChild(newH1);
 
     var newP = document.createElement("p");
     newP.setAttribute("id", "newP");
-    questionsDiv.appendChild(newP);
+    home.appendChild(newP);
 
     //Time remaining and score
     if (timeLeft >= 0){
@@ -120,25 +120,25 @@ function done() {
         var newP2 = document.createElement("p");
         clearInterval(holdInterval);
         newP2.textContent = "Your final score is: " + remainingTime;
-        questionsDiv.appendChild(newP2);
+        home.appendChild(newP2);
     }
 
     var newLabel = document.createElement("label");
     newLabel.setAttribute("id", "newLabel");
     newLabel.textContent = "Enter initials: ";
-    questionsDiv.appendChild(newLabel);
+    home.appendChild(newLabel);
 
     var newInput = document.createElement("input");
     newInput.setAttribute("type", "text");
     newInput.setAttribute("id", "initials");
     newInput.textContent = "";
-    questionsDiv.appendChild(newInput);
+    home.appendChild(newInput);
 
     var newSubmit = document.createElement("button");
     newSubmit.setAttribute("type", "submit");
     newSubmit.setAttribute("class", "btn");
     newSubmit.textContent = "Submit";
-    questionsDiv.appendChild(newSubmit);
+    home.appendChild(newSubmit);
 
     newSubmit.addEventListener("click", function() {
         var initials = newInput.value;
@@ -231,7 +231,7 @@ function done() {
 //     if (availableQuestions.length === 0 || questionCounter < MAX_QUESTIONS) {
 //     localStorage.setItem("mostRecentScore", score)
 //     createDiv.textContent = "End of quiz!" + " " + "You got " + score + "/" + questions.legth + "Correct!";
-//     questionsDiv.appendChild(createDiv);
+//     home.appendChild(createDiv);
 // }
 
 //     questionCounter++
