@@ -2,6 +2,7 @@ var question = document.querySelector("#question");
 var choices = Array.from(document.querySelectorAll(".choice-text"));
 var progressText = document.querySelector("#progressText");
 var scoreText = document.querySelector("#score");
+var score = 0;
 
 let currentQuestion = {}
 let acceptingAnswers = true
@@ -45,21 +46,21 @@ var SCORE_POINTS = 100
 var MAX_QUESTIONS = 4
 
 startGame = () => {
-    questionCounter = 0
+    var questionCounter = 0
     score = 0
     availableQuestions = [...questions]
     getNewQuestion()
 }
 
-gatNewQuestion = () => {
-    if (availableQuestions.length === 0 || questionsCounter < MAX_QUESTIONS) {
+getNewQuestion = () => {
+    if (availableQuestions.length === 0 || questionCounter < MAX_QUESTIONS) {
     localStorage.setItem("mostRecentScore", score)
-
-    return window.location.assign("/end.html")
-    }
+    createDiv.textContent = "End of quiz!" + " " + "You got " + score + "/" + questions.legth + "Correct!";
+    questionsDiv.appendChild(createDiv);
+}
 
     questionCounter++
-    progressText.innerText = "Question ${questionCounter} of ${MAX_QUESTIONS}"
+    progressText.innerText = questions (questionCounter); (MAX_QUESTIONS)
 
     var questionsIndex = Math.floor(Math.random() * availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
@@ -99,4 +100,9 @@ choices.forEach(choice => {
     })
 })
 
-incrementScore
+incrementScore = num => {
+    score += num
+    scoreText.innerText = score
+}
+
+startGame()
