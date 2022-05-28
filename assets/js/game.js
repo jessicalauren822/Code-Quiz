@@ -1,6 +1,15 @@
 var score = 0;
 var questionCounter = 0;
+var container = document.querySelector("#container");
+var timer = document.querySelector("#timer");
+var start = document.querySelector("#start");
+var home = document.querySelector("#home");
 
+// Timer setup
+var timeLeft = 70;
+var penalty = 10;
+var holdInterval = 0;
+var newEl = document.createElement("ul");
 
 
 // var question = document.querySelector("#question");
